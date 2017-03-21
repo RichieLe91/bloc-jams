@@ -29,3 +29,4 @@ var animatePoints = function() {
             
             
     };
+
