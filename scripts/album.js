@@ -26,7 +26,22 @@ var albumMarconi = {
         { title: 'Ring, ring, ring', duration: '5:01' },
         { title: 'Fits in your pocket', duration: '3:21' },
         { title: 'Can you hear me now?', duration: '3:14' },
-        { title: 'Wong, phone number', duration: '2:15'}
+        { title: 'Wrong, phone number', duration: '2:15'}
+    ]
+};
+ //3rd Album Object
+var albumTBS = {
+    title: 'Louder Now', 
+    artist: 'Taking Back Sunday',
+    label: 'Warner Bros.',
+    year: '2005',
+    albumArtUrl: 'assets/images/album_covers/22.jpg',
+    songs: [
+        { title: 'Spin', duration: '1:01' },
+        { title: 'MakeDamnSure', duration: '5:01' },
+        { title: 'Liar', duration: '3:21' },
+        { title: "What's It Feel Like to Be a Ghost?", duration: '3:14' },
+        { title: 'My Blue Heaven', duration: '2:15'}
     ]
 };
 
@@ -66,5 +81,20 @@ var setCurrentAlbum = function(album) {
 };
 
 window.onload = function() {
-    setCurrentAlbum(albumPicasso); 
+    setCurrentAlbum(albumTBS); 
 };
+
+function toggleAlbums() {
+    if(albumCover.getAttribute('src') === 'assets/images/album_covers/22.jpg') {
+        setCurrentAlbum(albumMarconi);
+    } else if(albumCover.getAttribute('src') === 'assets/images/album_covers/20.png') {
+        setCurrentAlbum(albumPicasso);
+    } else {
+        setCurrentAlbum(albumTBS);
+    }
+};
+
+var albumCover = document.getElementsByTagName("img")[1];
+
+albumCover.addEventListener("click", toggleAlbums, false);
+
