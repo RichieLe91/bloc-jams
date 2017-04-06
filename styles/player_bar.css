@@ -27,6 +27,11 @@
     min-height: 100%
 }
 
+.player-bar .control-group {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 .player-bar .main-controls {
     width: 25%; 
     text-align: left;
@@ -46,6 +51,11 @@
     width: 50%;
     text-align: center;
     position: relative;
+}
+
+.player-bar .volume {
+    width: 25%;
+    text-align: right;
 }
 
 .player-bar .currently-playing .song-name,
@@ -152,7 +162,9 @@
     .player-bar.currently-playing,
     .player-bar .volume {
         display: block;
-        margin: 100%;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
         text-align: center;
     }
     
